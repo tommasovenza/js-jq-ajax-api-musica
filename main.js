@@ -49,24 +49,24 @@ $(document).ready(function () {
 
 	$('select').change(function() {
 
-		var ricerca = $('select').val();
-
-		alert('HAI VAMBIATO SELECT, IL SUO VALORE è ' + ricerca);
-
-		// $('.cd').each(function() {
-
-		// 	var ricerca = $('.cd span .year').val();
-
-		// 	var cd = $('.cd');
-
-		// 	if (cd.includes(ricerca)) {
-		// 		$(this).show();
-		// 	} else {
-		// 		$(this).hide();
-		// 	}
 		
 
-		// });
+		// alert('HAI VAMBIATO SELECT, IL SUO VALORE è ' + ricerca);
+
+		$('.cd').each(function() {
+
+			var ricerca = $('select').val().toLowerCase();
+
+			var daRicercare = $(this).find('.author').text().toLowerCase();
+
+			if (daRicercare.includes(ricerca)) {
+				$(this).show();
+
+			} else {
+				$(this).hide();
+			}
+
+		});
 
 
 	});
