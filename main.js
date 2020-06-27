@@ -25,9 +25,13 @@ $(document).ready(function () {
 		error: function () {
 			alert('quaclosa non va');
 		}
-		
+
 	}); // end ajax
 
+
+	// handlebars
+	var source = $('#disco-template').html();
+	var template = Handlebars.compile(source);
 
 	function generaDischi(arrayDischi) {
 
@@ -35,16 +39,38 @@ $(document).ready(function () {
 
 			var singoloDisco = arrayDischi[i];
 
-			// handlebars
-			var source = $('#disco-template').html();
-			var template = Handlebars.compile(source);
-
 			// genera template con i parametri passati
 			var htmlGenerato = template(singoloDisco);
 
 			$('.cds-container').append(htmlGenerato);
 		}
 	}
+
+
+	$('select').change(function() {
+
+		var ricerca = $('select').val();
+
+		alert('HAI VAMBIATO SELECT, IL SUO VALORE è ' + ricerca);
+
+		// $('.cd').each(function() {
+
+		// 	var ricerca = $('.cd span .year').val();
+
+		// 	var cd = $('.cd');
+
+		// 	if (cd.includes(ricerca)) {
+		// 		$(this).show();
+		// 	} else {
+		// 		$(this).hide();
+		// 	}
+		
+
+		// });
+
+
+	});
+
 
 
 }); // end document ready
