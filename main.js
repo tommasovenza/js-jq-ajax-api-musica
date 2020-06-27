@@ -49,20 +49,20 @@ $(document).ready(function () {
 
 	$('select').change(function() {
 
-		
-
 		// alert('HAI VAMBIATO SELECT, IL SUO VALORE è ' + ricerca);
 
 		$('.cd').each(function() {
 
 			var ricerca = $('select').val().toLowerCase();
 
-			var daRicercare = $(this).find('.author').text().toLowerCase();
+			var daRicercare = $(this).find('.year').text().toLowerCase();
 
 			if (daRicercare.includes(ricerca)) {
+
 				$(this).show();
 
 			} else {
+
 				$(this).hide();
 			}
 
